@@ -1,0 +1,29 @@
+.festival {
+    padding: $separacion 0;
+    @include tablet {
+        @include grid(2, $separacion);
+    }
+}
+
+.seccion__titulo {
+    h3 {
+        margin-bottom: 4rem;
+    }
+}
+
+.festival__contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    //flex-direccion:lolumn y justify-content:center para alinear verticalmente
+    h2 {
+        font-size: 3rem;
+    }
+    .festival__contenido--fecha {
+        color: $rosa;
+        font-weight: $bold;
+    }
+    .festival__contenido--texto {
+        line-height: 1.5;
+    }
+}

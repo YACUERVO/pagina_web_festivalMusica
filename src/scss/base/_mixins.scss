@@ -1,0 +1,27 @@
+@mixin telefono {
+    @media (min-width: $telefono) {
+        @content;
+        //para que soporte muchas porpiedades en el mixin
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $tablet) {
+        @content;
+        //para que soporte muchas porpiedades en el mixin
+    }
+}
+
+//mixin para aplciar si se repite codigo muchas veces
+@mixin desktop {
+    @media (min-width: $pc) {
+        @content;
+        //para que soporte muchas porpiedades en el mixin
+    }
+}
+
+@mixin grid($columnas, $espaciado) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espaciado;
+}

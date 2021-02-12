@@ -347,22 +347,91 @@ h2 {
 h3 {
   font-size: 3rem; }
 
+.no-margin {
+  margin: 0; }
+
 .header {
   background-color: #4cb8b3; }
   .header .header__contenido {
-    padding: 2.5rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
+    padding: 2.5rem 0; }
+    @media (min-width: 768px) {
+      .header .header__contenido {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; } }
   .header h1 {
-    color: #fff; }
+    color: #fff;
+    margin: bottom 1rem;
+    text-align: center; }
+    @media (min-width: 768px) {
+      .header h1 {
+        margin-bottom: 0; } }
 
 .navegacion__principal {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 1.5rem; }
+  display: flex;
+  gap: 2rem;
+  justify-content: center; }
   .navegacion__principal a {
     color: #fff;
     font-size: 2rem; }
     .navegacion__principal a:hover {
       color: #fef46d; }
+
+.video {
+  position: relative;
+  max-height: 70rem;
+  overflow: hidden; }
+  .video .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#891c1e+0,9e37f2+70,ffffff+100&0.8+0,0.5+100 */
+    background: -moz-linear-gradient(-45deg, rgba(137, 28, 30, 0.8) 0%, rgba(158, 55, 242, 0.59) 70%, rgba(255, 255, 255, 0.5) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(137, 28, 30, 0.8) 0%, rgba(158, 55, 242, 0.59) 70%, rgba(255, 255, 255, 0.5) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(137, 28, 30, 0.8) 0%, rgba(158, 55, 242, 0.59) 70%, rgba(255, 255, 255, 0.5) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+  .video video {
+    display: block;
+    width: 100%; }
+
+.video__contenido {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  z-index: 1; }
+  .video__contenido h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #fff;
+    font-size: 7rem; }
+    .video__contenido h2 span {
+      background-color: #f53756;
+      font-size: 2rem;
+      padding: 1rem; }
+
+.festival {
+  padding: 5rem 0; }
+  @media (min-width: 768px) {
+    .festival {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5rem; } }
+
+.seccion__titulo h3 {
+  margin-bottom: 4rem; }
+
+.festival__contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .festival__contenido h2 {
+    font-size: 3rem; }
+  .festival__contenido .festival__contenido--fecha {
+    color: #f53756;
+    font-weight: 700; }
+  .festival__contenido .festival__contenido--texto {
+    line-height: 1.5; }
