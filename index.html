@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock & EDM Festival</title>
-    <link rel="preload" href="build/css/app.css">
+    <link rel="preload" href="build/css/app.css" as="style">
     <link rel="stylesheet" href="build/css/app.css">
+
 
 </head>
 
@@ -16,9 +17,9 @@
         <div class="contenedor header__contenido">
             <h1>Rock & EDM Festival</h1>
             <nav class="navegacion__principal">
-                <a href="#">Line Up</a>
-                <a href="#">Galeria</a>
-                <a href="#">Boletos</a>
+                <a href="#lineup">Line Up</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#boletos">Boletos</a>
             </nav>
         </div>
     </header>
@@ -52,7 +53,7 @@
         </div>
     </div>
 
-    <section class="lineup">
+    <section id="lineup" class="lineup">
         <h3>Line Up</h3>
         <p class="dia">viernes 21</p>
         <div class="escenarios__contenedor contenedor">
@@ -114,7 +115,7 @@
             </div>
         </div>
     </section>
-    <section class="galeria contenedor">
+    <section id="galeria" class="galeria contenedor">
         <h3>Galeria</h3>
         <ul class="galeria__imagenes">
 
@@ -122,6 +123,92 @@
         </ul>
 
     </section>
+
+
+
+    <section id="boletos" class="boletos bg-verde">
+        <h3>Boletos</h3>
+        <div class="boletos__contenedor contenedor">
+            <div class="boletos__basico plan">
+                <p>Pase 1 día</p>
+                <table class="pase">
+                    <thead>
+                        <tr>
+                            <th>
+                                Incluye
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <body>
+                        <tr>
+                            <td>
+                                Acceso a todos los escenarios
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Comida y bebida
+                            </td>
+                        </tr>
+                    </body>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                $100
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="boletos__premium plan">
+                <p>Pase 2 día</p>
+                <table class="pase">
+                    <thead>
+                        <tr>
+                            <th>
+                                Incluye
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                Acceso a todos los escenarios
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Comida y bebida
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Camisa del evento
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Acceso VIP
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                $180
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>Rock & EDM Festival. Todos los Derechos Recervados</p>
+
+    </footer>
 
     <script src="build/js/bundle.js"></script>
 
