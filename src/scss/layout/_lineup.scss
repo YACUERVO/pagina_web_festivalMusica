@@ -16,9 +16,59 @@
     @include tablet {
         @include grid(2, $separacion)
     }
+    .escenario {
+        padding-top: $separacion/2;
+    }
     .nombre__escenario {
         color: $negro;
         font-size: 2rem;
         font-weight: $delgada;
+        &:after {
+            content: '';
+            width: 20rem;
+            height: 10rem;
+            display: block;
+            margin: 2rem auto 0 auto;
+            //para crear pseudoelementos
+            background-size: 20rem;
+            //tamaño de una imagen de fondo
+            background-repeat: no-repeat;
+            background-position: center;
+            //para alinear la imagen en el centro
+        }
     }
+}
+
+.edm .nombre__escenario {
+    &:after {
+        background-image: url(../img/icono_edm.png);
+    }
+}
+
+.rock .nombre__escenario {
+    &:after {
+        background-image: url(../img/icono_rock.png);
+    }
+}
+
+.calendario__escenario {
+    padding: 0;
+    list-style: none;
+    li {
+        padding: $separacion/2;
+        font-weight: $bold;
+    }
+    span {
+        font-weight: $regular;
+    }
+}
+
+.bg-verde .calendario__escenario li:nth-child(odd) {
+    //Representa las filas impares de una tabla
+    background-color: darken($verde, 10);
+}
+
+.bg-amarillo .calendario__escenario li:nth-child(odd) {
+    //Representa las filas impares de una tabla
+    background-color: darken($amarillo, 10);
 }

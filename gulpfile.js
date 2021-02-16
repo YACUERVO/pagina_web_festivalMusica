@@ -5,11 +5,15 @@ const imagemin = require('gulp-imagemin'); //dependencia para minimizar el tama√
 const notify = require('gulp-notify');
 const webp = require('gulp-webp'); //para que las imagenes se formatean a formato webp
 //Funcion compila SASS
+const concap = require('gulp-concat');
+//para compilar js
 const paths = {
         imagenes: 'src/img/**/*',
         //scss:'src/scss/**/*.scss''
+        js: 'src/js/**/*.js'
     }
     //objeto para imagenes por si deseo modificar la ruta 
+
 function css() {
     return src('src/scss/app.scss')
         .pipe(sass())
@@ -24,6 +28,13 @@ function minificarcss() {
         }))
         .pipe(dest('./build/css'))
         //para crear un archivo de css donde se va mostrar el codigo css
+}
+
+function javascript() {
+    return src(paths.js)
+        .pipe(concap('bundle.js'))
+        .pipe(dest('./build/js'))
+
 }
 
 
@@ -48,14 +59,17 @@ function watchArchivos() {
     //verifica los cambios que hay en la carpera y ejecuta el archivo a compilar css
     //wath para automatizar compilaciones
     //para que podamos ejecutar sin compilar
+    watch(paths.js, javascript);
+    //para que ejecute la funcion de javacrip siempre que guardemos 
 }
 
 
 
 exports.css = css;
+exports.javascript = javascript;
 exports.minificarcss = minificarcss;
 exports.imagenes = imagenes;
 
 exports.watchArchivos = watchArchivos;
 
-exports.default = series(css, imagenes, versionwebp, watchArchivos);
+exports.default = series(css, javascript, imagenes, versionwebp, watchArchivos);

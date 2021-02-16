@@ -14,7 +14,7 @@
 
 //mixin para aplciar si se repite codigo muchas veces
 @mixin desktop {
-    @media (min-width: $pc) {
+    @media (min-width: $desktop) {
         @content;
         //para que soporte muchas porpiedades en el mixin
     }

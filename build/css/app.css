@@ -316,6 +316,8 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem; }
+  body.fijar__body {
+    overflow: hidden; }
 
 p {
   font-size: 2rem;
@@ -459,7 +461,84 @@ h3 {
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem; } }
 
+.escenarios__contenedor .escenario {
+  padding-top: 2.5rem; }
+
 .escenarios__contenedor .nombre__escenario {
   color: #000;
   font-size: 2rem;
   font-weight: 300; }
+  .escenarios__contenedor .nombre__escenario:after {
+    content: '';
+    width: 20rem;
+    height: 10rem;
+    display: block;
+    margin: 2rem auto 0 auto;
+    background-size: 20rem;
+    background-repeat: no-repeat;
+    background-position: center; }
+
+.edm .nombre__escenario:after {
+  background-image: url(../img/icono_edm.png); }
+
+.rock .nombre__escenario:after {
+  background-image: url(../img/icono_rock.png); }
+
+.calendario__escenario {
+  padding: 0;
+  list-style: none; }
+  .calendario__escenario li {
+    padding: 2.5rem;
+    font-weight: 700; }
+  .calendario__escenario span {
+    font-weight: 400; }
+
+.bg-verde .calendario__escenario li:nth-child(odd) {
+  background-color: #3b9691; }
+
+.bg-amarillo .calendario__escenario li:nth-child(odd) {
+  background-color: #fef03a; }
+
+.galeria {
+  padding: 5rem 0; }
+  .galeria h3 {
+    text-align: center; }
+
+.galeria__imagenes {
+  padding: 0;
+  list-style: none;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem; }
+  @media (min-width: 768px) {
+    .galeria__imagenes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem; } }
+  @media (min-width: 1200px) {
+    .galeria__imagenes {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 2.5rem; } }
+
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: grid;
+  place-items: center; }
+
+.cerrar__imagen {
+  width: 5rem;
+  height: 5rem;
+  background-color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 3rem;
+  border-radius: 50%; }
+  .cerrar__imagen:hover {
+    cursor: pointer; }
