@@ -7,6 +7,23 @@ const webp = require('gulp-webp'); //para que las imagenes se formatean a format
 //Funcion compila SASS
 const concap = require('gulp-concat');
 //para compilar js
+
+//utlidades CSS
+const autoprefixer = require('autoprefixer');
+//prefijos en nuestro css
+const postcss = require('gulp-postcss');
+//procesamientos a nuestro css
+const cssnano = require('cssnano');
+//para optimizar y mejorar el css. escribir codiido de ultima generacion y mejoras en nuestro codigo
+const sourcemaps = require('gulp-sourcemaps');
+//mantiene la referecnia de que archivo esta para realizar una modificacion del css para verificar 
+
+//utilidades js
+const terser = require('gulp-terser-js');
+//para minificar nuestro js y optimizarlo
+const rename = require('gulp-rename');
+
+
 const paths = {
         imagenes: 'src/img/**/*',
         //scss:'src/scss/**/*.scss''
@@ -16,7 +33,11 @@ const paths = {
 
 function css() {
     return src('src/scss/app.scss')
+        .pipe(sourcemaps.init()) //iniciando el mapa
         .pipe(sass())
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write('.'))
+        //escribimos nuestro mapa de nuestro mapa        
         .pipe(dest('./build/css'))
 }
 
@@ -32,7 +53,11 @@ function minificarcss() {
 
 function javascript() {
     return src(paths.js)
+        .pipe(sourcemaps.init())
         .pipe(concap('bundle.js'))
+        .pipe(terser())
+        .pipe(sourcemaps.write('.'))
+        .pipe(rename({ suffix: '.min' }))
         .pipe(dest('./build/js'))
 
 }
@@ -69,7 +94,5 @@ exports.css = css;
 exports.javascript = javascript;
 exports.minificarcss = minificarcss;
 exports.imagenes = imagenes;
-
 exports.watchArchivos = watchArchivos;
-
 exports.default = series(css, javascript, imagenes, versionwebp, watchArchivos);
